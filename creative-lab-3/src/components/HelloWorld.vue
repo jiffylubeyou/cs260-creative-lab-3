@@ -1,7 +1,7 @@
 <template>
 <div class="wrapper">
   <div class="products">
-    <div class="product" v-for="product in this.$root.$data.products" :key="product.id">
+    <div class="product" v-for="product in products" :key="product.id">
       <div class="info">
         <h1>{{product.name}}</h1>
       </div>
@@ -13,6 +13,22 @@
   </div>
 </div>
 </template>
+
+<script>
+export default {
+  name: 'HelloWorld',
+  props: {
+    products: Array
+  },
+  methods: {
+    addCartClick(product)
+    {
+      this.$root.$data.numberOfItems++;
+      this.$root.$data.cart.push(product);
+    }
+  }
+}
+</script>
 
 <style scoped>
 .wrapper {
@@ -84,34 +100,5 @@ button {
 }
 </style>
 
-<script>
-export default {
-  name: 'ProductList',
-  props: {
-    products: Array
-  },
-  methods: {
-      addCartClick(product)
-    {
-      this.$root.$data.numberOfItems++;
-      this.$root.$data.cart.push(product);
-    }
-  }
-}
 
-<script>
-export default {
-  name: 'ProductList',
-  props: {
-    products: Array
-  },
-  methods: {
-      addCartClick(product)
-    {
-      this.$root.$data.numberOfItems++;
-      this.$root.$data.cart.push(product);
-    }
-  }
-}
-</script>
 
