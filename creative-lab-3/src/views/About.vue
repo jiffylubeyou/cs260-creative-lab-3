@@ -4,7 +4,9 @@
     <div class="paragraph">
       <p>There are lots of options to chose from, so just click whatever and add it to your sandwich. It's not very hard so if you still have trouble then you're probably beyond saving.</p>
     </div>
-
+    <div class="paragraph">
+    <p>Current sandwich has {{this.$root.$data.mySandwich}}</p>
+    </div>
     <HelloWorld :products="products"/>
 
   </div>

@@ -25,6 +25,7 @@ export default {
     {
       this.$root.$data.numberOfItems++;
       this.$root.$data.cart.push(product);
+      this.$root.$data.mySandwich = this.$root.$data.mySandwich + " with " + product.name;
     }
   }
 }
